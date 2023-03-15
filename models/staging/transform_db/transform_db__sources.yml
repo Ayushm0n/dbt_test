@@ -2,6 +2,7 @@ version: 2
 
 sources:
   - name: transform_db
-    database: public
+    database: transform_db
+    schema: public
     tables:
       - name: airbyte_postgres_src_test_leads_table
