@@ -1,0 +1,7 @@
+version: 2
+
+sources:
+  - name: transform_db
+    database: transform_db
+    tables:
+      - name: airbyte_postgres_src_test_leads_table
