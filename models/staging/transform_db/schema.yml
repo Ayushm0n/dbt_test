@@ -1,0 +1,17 @@
+version: 2
+
+models:
+  - name: stg_test_leads
+    description: model for test leads table
+    columns:
+      - name: id
+        tests:
+          - unique
+          - not_null
+      - name: lead_name
+        tests:
+          - not_null
+      - name: contact
+        tests:
+          - not_null
+          - unique
