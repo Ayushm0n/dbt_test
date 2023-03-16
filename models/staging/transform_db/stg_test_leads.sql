@@ -1,12 +1,12 @@
 with source as (
     select * from {{ source('transform_db', 'airbyte_postgres_src_test_leads_table') }}
 ),
-columns as (
+renamed as (
     select
     id,
-    name,
-    phone
+    name as lead_name,
+    phone as contact
     from source
 )
 
-select * from columns
+select * from renamed
