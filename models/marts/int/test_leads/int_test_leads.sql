@@ -1,5 +1,4 @@
 with 
-
 test_leads as (
     select * from {{ ref('stg_test_leads')}}
 ),
@@ -9,7 +8,7 @@ renamed as (
     id,
     name as lead_name,
     phone as contact
-    from source
+    from test_leads
 ),
 
 notNull as (
