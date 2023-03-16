@@ -11,17 +11,15 @@ renamed as (
     from test_leads
 ),
 
-notNull as (
+notNullData as (
     select
     id,
     lead_name,
     contact
     from renamed
-    where(
-    id IS NOT NULL AND
-    lead_name IS NOT NULL AND
-    contact IS NOT NULL
-    )
+    WHERE
+    lead_name IS NOT NULL
+    AND contact IS NOT NULL
 ),
 
 unqiueContact as (
@@ -29,8 +27,8 @@ unqiueContact as (
     MIN(id) as id,
     lead_name,
     contact
-    from notNull
-    GROUP BY contact
+    from notNullData
+    GROUP BY contact, lead_name
 )
 
 select * from unqiueContact
