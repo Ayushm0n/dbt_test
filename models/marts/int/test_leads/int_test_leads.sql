@@ -10,7 +10,7 @@ renamed as (
     name as lead_name,
     phone as contact
     from source
-)
+),
 
 notNull as (
     select
@@ -20,7 +20,7 @@ notNull as (
     id IS NOT NULL AND
     lead_name IS NOT NULL AND
     contact IS NOT NULL
-)
+),
 
 unqiueContact as (
     select
