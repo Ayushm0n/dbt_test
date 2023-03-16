@@ -11,7 +11,7 @@ renamed as (
     from test_leads
 ),
 
-notNull as (
+{# notNull as (
     select
     *
     from renamed
@@ -28,6 +28,6 @@ unqiueContact as (
     contact
     from notNull
     GROUP BY contact
-)
+) #}
 
-select * from unqiueContact
+select * from renamed
